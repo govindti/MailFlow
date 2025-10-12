@@ -21,7 +21,7 @@ func emailWorker(id int, ch chan Recipient, wg *sync.WaitGroup) {
 		}
 		fmt.Printf("Worker %d: Sending email to %s\n", id, recipient.Email)
 
-		err := smtp.SendMail(smtpHost+":"+smtpPort, nil, "108tiwari.g@gmail.com", []string{recipient.Email}, emailMsg)
+		err = smtp.SendMail(smtpHost+":"+smtpPort, nil, "108tiwari.g@gmail.com", []string{recipient.Email}, []byte(emailMsg))
 
 		if err != nil {
 			fmt.Printf("Worker %d: Failed to send email to %s: %v\n", id, recipient.Email, err)

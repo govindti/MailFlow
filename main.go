@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"html/template"
 	"sync"
@@ -34,15 +35,14 @@ func main() {
 	fmt.Println("All emails sent!")
 }
 
-
-func excuteTemplate(r Recipient)(string, error){
+func excuteTemplate(r Recipient) (string, error) {
 	t, err := template.ParseFiles("email.tmpl")
 	if err != nil {
 		return "", err
 	}
 
 	var tpl bytes.Buffer
-	
+
 	err = t.Execute(&tpl, r)
 	if err != nil {
 		return "", err
