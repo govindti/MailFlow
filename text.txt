@@ -1,0 +1,6 @@
+Improvements:
+1. Store the contact list into DB(PostGreSQL)
+2. Add Segments
+3. Multiple Compaign
+4. Handle Email Fail
+5. Customise Email Template
