@@ -55,7 +55,7 @@ git clone https://github.com/govindti/MailFlow.git
 - Build and run:
 - go build
 ./MailFlow    \# or `go run main.go` depending on implementation
-
+- For containerized usage — see docker.md.
 
 ### ⚙️ Configuration \& Customization
 
